@@ -20,6 +20,9 @@ class RiceVector
 		// Prints the contents of the vector
 		void print();
 
+		// Pushes an element onto the back of the vector
+		void pushBack(int element);
+
 		// Vector size getter
 		int getSize();
 
@@ -72,6 +75,27 @@ void RiceVector::print()
 	}
 
 	std::cout << ">" << std::endl;
+}
+
+// Pushes an element onto the back of the vector
+void RiceVector::pushBack(int element)
+{
+	if (this->size >= this->capacity)
+	{
+		int* newArray = new int[capacity * 2 + 1];
+
+		for (int i = 0; i < this->size; i++)
+		{
+			newArray[i] = this->array[i];
+		}
+
+		this->array = newArray;
+		this->capacity = capacity * 2 + 1;
+	}
+
+	this->array[this->size] = element;
+
+	size += 1;
 }
 
 // Vector size getter
