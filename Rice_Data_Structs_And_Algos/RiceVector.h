@@ -17,6 +17,9 @@ class RiceVector
 		// Constructor with size and elements
 		RiceVector(int size, int element);
 
+		// Prints the contents of the vector
+		void print();
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -44,6 +47,22 @@ RiceVector::RiceVector(int size, int element)
 	for (int i = 0; i < size; i++)
 	{
 		array[i] = element;
+	}
+}
+
+// Prints the contents of the vector
+void RiceVector::print()
+{
+	std::cout << "<";
+
+	for (int i = 0; i < (this->size - 1); i++)
+	{
+		std::cout << this->array[i] << " ";
+	}
+
+	if (this->size > 0)
+	{
+		std::cout << this->array[this->size - 1] << ">" << std::endl;
 	}
 }
 
