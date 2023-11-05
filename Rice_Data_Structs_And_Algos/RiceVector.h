@@ -62,8 +62,10 @@ void RiceVector::print()
 
 	if (this->size > 0)
 	{
-		std::cout << this->array[this->size - 1] << ">" << std::endl;
+		std::cout << this->array[this->size - 1];
 	}
+
+	std::cout << ">" << std::endl;
 }
 
 // Overloading [] operator
