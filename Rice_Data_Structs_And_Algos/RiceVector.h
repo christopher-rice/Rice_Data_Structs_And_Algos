@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 /*
  * Description:
@@ -15,6 +16,9 @@ class RiceVector
 
 		// Constructor with size and elements
 		RiceVector(int size, int element);
+
+		// Overloading [] operator
+		int& operator[](int index);
 
 	private:
 		int* array;   // Pointer to contiguous array in memory containing data
@@ -41,4 +45,17 @@ RiceVector::RiceVector(int size, int element)
 	{
 		array[i] = element;
 	}
+}
+
+// Overloading [] operator
+int& RiceVector::operator[](int index)
+{
+	// Checks for out of bounds index
+	if ((index >= this->size) || (index < 0))
+	{
+		std::cout << "ERROR: OUT OF BOUNDS" << std::endl;
+		exit(0);
+	}
+
+	return(this->array[index]);
 }
