@@ -20,6 +20,12 @@ class RiceVector
 		// Prints the contents of the vector
 		void print();
 
+		// Vector size getter
+		int getSize();
+
+		// Vector capacity getter
+		int getCapacity();
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -66,6 +72,18 @@ void RiceVector::print()
 	}
 
 	std::cout << ">" << std::endl;
+}
+
+// Vector size getter
+int RiceVector::getSize()
+{
+	return(this->size);
+}
+
+// Vector capacity getter
+int RiceVector::getCapacity()
+{
+	return(this->capacity);
 }
 
 // Overloading [] operator
