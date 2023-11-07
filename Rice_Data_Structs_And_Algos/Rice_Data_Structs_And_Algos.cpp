@@ -5,27 +5,27 @@ int main()
 {
     std::cout << "---TESTING CUSTOM VECTORS---" << std::endl;
 
-    RiceVector testVec1(1, 1);
+    RiceVector testVec1(1, 5);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    testVec1.pushBack(2);
+    testVec1.insert(1, 4);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    testVec1.pushBack(3);
+    testVec1.insert(1, 3);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    testVec1.pushBack(4);
+    testVec1.insert(1, 2);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    testVec1.pushBack(5);
+    testVec1.insert(1, 1);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();

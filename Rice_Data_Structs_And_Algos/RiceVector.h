@@ -20,6 +20,9 @@ class RiceVector
 		// Prints the contents of the vector
 		void print();
 
+		// Inserts an element within the vector
+		void insert(int element, int index);
+
 		// Pushes an element onto the back of the vector
 		void pushBack(int element);
 
@@ -75,6 +78,36 @@ void RiceVector::print()
 	}
 
 	std::cout << ">" << std::endl;
+}
+
+// Inserts an element within the vector
+void RiceVector::insert(int element, int index)
+{
+	if (this->size >= this->capacity)
+	{
+		int* newArray = new int[capacity * 2 + 1];
+
+		for (int i = 0; i < this->size; i++)
+		{
+			newArray[i] = this->array[i];
+		}
+
+		this->array = newArray;
+		this->capacity = capacity * 2 + 1;
+	}
+
+	for (int i = (this->size - 1); i >= 0; i--)
+	{
+		this->array[i + 1] = this->array[i];
+
+		if (i == index)
+		{
+			this->array[i] = element;
+			break;
+		}
+	}
+
+	this->size += 1;
 }
 
 // Pushes an element onto the back of the vector
