@@ -41,6 +41,9 @@ class RiceVector
 		// Gets the element at the end of the vector
 		int end();
 
+		// Returns whether or not the vector is empty
+		bool empty();
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -192,6 +195,12 @@ int RiceVector::end()
 	}
 
 	return(this->array[this->size - 1]);
+}
+
+// Returns whether or not the vector is empty
+bool RiceVector::empty()
+{
+	return(this->size == 0);
 }
 
 // Overloading [] operator
