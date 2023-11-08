@@ -47,6 +47,9 @@ class RiceVector
 		// Increases or decreases the capacity of the vector
 		void reserve(int newCapacity);
 
+		// Clears the vector of all of its contents
+		void clear();
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -233,6 +236,16 @@ void RiceVector::reserve(int newCapacity)
 
 	std::cout << this->size << std::endl;
 	std::cout << this->capacity << std::endl;
+}
+
+// Clears the vector of all of its contents
+void RiceVector::clear()
+{
+	delete[] this->array;
+
+	this->array = new int[0];
+	this->size = 0;
+	this->capacity = 0;
 }
 
 // Overloading [] operator
