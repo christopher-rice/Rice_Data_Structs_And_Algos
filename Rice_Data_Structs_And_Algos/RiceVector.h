@@ -23,6 +23,9 @@ class RiceVector
 		// Inserts an element within the vector
 		void insert(int element, int index);
 
+		// Erases element at the index
+		void erase(int index);
+
 		// Pushes an element onto the back of the vector
 		void pushBack(int element);
 
@@ -133,6 +136,20 @@ void RiceVector::insert(int element, int index)
 	}
 
 	this->size += 1;
+}
+
+// Erases element at the index
+void RiceVector::erase(int index)
+{
+	for (int i = 0; i < (this->size - 1); i++)
+	{
+		if (i >= index)
+		{
+			this->array[i] = this->array[i + 1];
+		}
+	}
+
+	this->size -= 1;
 }
 
 // Pushes an element onto the back of the vector

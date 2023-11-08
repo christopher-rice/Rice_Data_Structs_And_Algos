@@ -35,7 +35,7 @@ int main()
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    testVec1.clear();
+    testVec1.erase(4);
 
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
