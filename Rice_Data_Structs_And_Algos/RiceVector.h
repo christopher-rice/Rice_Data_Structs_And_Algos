@@ -35,6 +35,12 @@ class RiceVector
 		// Gets the values at the supplied index
 		int at(int index);
 
+		// Gets the element at the front of the vector
+		int front();
+
+		// Gets the element at the end of the vector
+		int end();
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -164,6 +170,28 @@ int RiceVector::at(int index)
 	}
 
 	return(this->array[index]);
+}
+
+// Gets the element at the front of the vector
+int RiceVector::front()
+{
+	if (this->size == 0)
+	{
+		exit(0);
+	}
+
+	return(this->array[0]);
+}
+
+// Gets the element at the end of the vector
+int RiceVector::end()
+{
+	if (this->size == 0)
+	{
+		exit(0);
+	}
+
+	return(this->array[this->size - 1]);
 }
 
 // Overloading [] operator
