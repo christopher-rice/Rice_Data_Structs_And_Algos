@@ -35,7 +35,10 @@ int main()
     std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
     testVec1.print();
 
-    std::cout << testVec1.empty() << std::endl;
+    testVec1.reserve(50);
+
+    std::cout << "(" << testVec1.getSize() << ", " << testVec1.getCapacity() << "): ";
+    testVec1.print();
 
     std::cout << "---TESTING COMPLETE---" << std::endl;
 }

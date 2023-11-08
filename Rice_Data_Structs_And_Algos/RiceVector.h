@@ -44,6 +44,9 @@ class RiceVector
 		// Returns whether or not the vector is empty
 		bool empty();
 
+		// Increases or decreases the capacity of the vector
+		void reserve(int newCapacity);
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -201,6 +204,35 @@ int RiceVector::end()
 bool RiceVector::empty()
 {
 	return(this->size == 0);
+}
+
+// Increases or decreases the capacity of the vector
+void RiceVector::reserve(int newCapacity)
+{
+	int* newArray = new int[newCapacity];
+
+	for (int i = 0; i < newCapacity; i++)
+	{
+		if (i < this->size)
+		{
+			newArray[i] = this->array[i];
+		}
+		else
+		{
+			newArray[i] = 0;
+		}
+	}
+
+	if (newCapacity < this->size)
+	{
+		this->size = newCapacity;
+	}
+
+	this->capacity = newCapacity;
+	this->array = newArray;
+
+	std::cout << this->size << std::endl;
+	std::cout << this->capacity << std::endl;
 }
 
 // Overloading [] operator
