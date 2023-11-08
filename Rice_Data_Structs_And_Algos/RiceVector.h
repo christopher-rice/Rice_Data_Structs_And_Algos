@@ -96,15 +96,22 @@ void RiceVector::insert(int element, int index)
 		this->capacity = capacity * 2 + 1;
 	}
 
-	for (int i = (this->size - 1); i >= 0; i--)
+	if (index != this->size)
 	{
-		this->array[i + 1] = this->array[i];
-
-		if (i == index)
+		for (int i = (this->size - 1); i >= 0; i--)
 		{
-			this->array[i] = element;
-			break;
+			this->array[i + 1] = this->array[i];
+
+			if (i == index)
+			{
+				this->array[i] = element;
+				break;
+			}
 		}
+	}
+	else
+	{
+		this->array[this->size] = element;
 	}
 
 	this->size += 1;
