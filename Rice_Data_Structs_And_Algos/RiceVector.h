@@ -32,6 +32,9 @@ class RiceVector
 		// Vector capacity getter
 		int getCapacity();
 
+		// Gets the values at the supplied index
+		int at(int index);
+
 		// Overloading [] operator
 		int& operator[](int index);
 
@@ -150,8 +153,8 @@ int RiceVector::getCapacity()
 	return(this->capacity);
 }
 
-// Overloading [] operator
-int& RiceVector::operator[](int index)
+// Gets the values at the supplied index
+int RiceVector::at(int index)
 {
 	// Checks for out of bounds index
 	if ((index >= this->size) || (index < 0))
@@ -160,5 +163,11 @@ int& RiceVector::operator[](int index)
 		exit(0);
 	}
 
+	return(this->array[index]);
+}
+
+// Overloading [] operator
+int& RiceVector::operator[](int index)
+{
 	return(this->array[index]);
 }
